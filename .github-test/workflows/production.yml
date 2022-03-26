@@ -1,0 +1,48 @@
+name: Fresh-Food
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: install package and start pm2
+      run: |
+        npm i -g pm2
+        npm i -g rimraf
+        yarn
+        yarn pm2
+      env:
+        CI: true
+
+  deploy:
+    needs: [test]
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: SSH and Deploy FreshFood
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        password: ${{ secrets.SSH_KEY }}
+        port: ${{ secrets.SSH_PORT }}
+        script: |
+          cd ~/FreshFood
+          git pull origin master
+          yarn
+          yarn pm2

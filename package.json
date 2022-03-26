@@ -1,0 +1,50 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "env-cmd -f ./.env nodemon --inspect src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-console.log.log --copy-files",
+    "build:prod": "babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-console.log.log --copy-files",
+    "start:dev": "npm run build && node dist/src/server.js",
+    "start:prod": "node dist/src/server.js",
+    "dev": "nodemon src/server.js",
+    "pm2": "yarn build && yarn pm2:start",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "testchoi": "env-cmd -f ./.env nodemon --inspect test.js",
+    "tunnel":"ngrok http 8080"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "aws-sdk": "^2.983.0",
+    "axios": "^0.24.0",
+    "bcryptjs": "^2.4.3",
+    "blurhash": "^1.1.4",
+    "body-parser": "^1.19.0",
+    "cors": "^1.0.1",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "env-cmd": "^10.1.0",
+    "express": "^4.17.1",
+    "firebase-admin": "^9.11.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "ngrok": "^4.3.1",
+    "nodemailer": "^6.6.3",
+    "otp-generator": "^2.0.1",
+    "paypal-rest-sdk": "^1.8.1",
+    "sharp": "^0.29.1",
+    "socket.io": "^2.3.0",
+    "twilio": "^3.71.1",
+    "validator": "^13.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
