@@ -1,0 +1,9 @@
+> [POST] CREATE NEW GROUP PRODUCT
+CURL -v 'localhost:8080/groupProduct/createGroupProduct' \
+-X 'POST' \
+-H 'Content-Type: application/json; charset=utf-8' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJIVUZMSVQiLCJkYXRhIjp7ImlkIjoiNjI1ZDBkYmE4OGNjZDdiYThjYmVhMTFlIiwicm9sZSI6MX0sImlhdCI6MTY1MDI2NTUzMDEyNCwiZXhwIjoxNjUwMzUxOTMwMTI0fQ.oKE8IcL4NE6xhYIKCFuQvc9ae79xRGFWWIG90VU7hsU' \
+-d \
+'{
+    "name": "FOOD"
+}'
