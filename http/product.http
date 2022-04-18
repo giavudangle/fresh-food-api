@@ -11,10 +11,10 @@ CURL -v 'localhost:8080/product/createProduct' \
 '{
     "name": "Chân gà xả tắc", 
     "detail": "Chân gà xả tắc",
-    "price": "200000",
+    "price": 200000,
     "groupProduct": "GP-1",
-    "weight": "3.5",
-    "quantity": "3.5",
+    "weight": 3.5,
+    "quantity": 100,
     "image": []
 }'
 
