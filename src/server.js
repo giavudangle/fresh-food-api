@@ -22,7 +22,7 @@ app.use(express.json())
 app.use(morgan("dev"))
 app.use(cors())
 app.use(route)
-app.get('/healCheck', (req, res) => res.status(200).json({hello : 'Welcome to FreshFood v1.0'}))
+app.get('/is-available', (req, res) => res.status(200).json({hello : 'Welcome to FreshFood v1.0'}))
 app.get('/*', (req, res) => res.send({message: 'cannot access route'}))
 
 global.io = require('socket.io').listen(server);

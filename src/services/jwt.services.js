@@ -34,7 +34,7 @@ const verify = (req, res, next) => {
 const createToken = (data) => {
 	return jwt.sign(
 		{
-			iss: 'Nguyen Phan Nhat Tu',
+			iss: 'HUFLIT',
 			data: data,
 			iat: new Date().getTime(),
 			exp: new Date().setDate(new Date().getDate() + 1)

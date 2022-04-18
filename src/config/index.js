@@ -3,7 +3,7 @@ require('dotenv').config();
 const configEnv = {
 	ACCESS_TOKEN_SECRET: process.env.ACCESS_TOKEN_SECRET,
 	JWT_KEY: process.env.JWT_KEY,
-	MONGO_URI: 'mongodb+srv://hytran:hytran@cluster0.06alb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+	MONGO_URI: 'mongodb+srv://hytran:hytran@cluster0.06alb.mongodb.net/fresh-food-database?retryWrites=true&w=majority',
 	PORT: process.env.PORT,
 	BUCKET: process.env.BUCKET,
 	REGION: process.env.REGION,
