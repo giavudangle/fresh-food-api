@@ -1,0 +1,25 @@
+> [GET] FIND PRODUCT LIST
+CURL -v 'localhost:8080/product/findAllProduct' \
+-X 'GET' 
+
+> [POST] CREATE NEW PRODUCT
+CURL -v 'localhost:8080/product/createProduct' \
+-X 'POST' \
+-H 'Content-Type: application/json; charset=utf-8' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJIVUZMSVQiLCJkYXRhIjp7ImlkIjoiNjI1ZDBkYmE4OGNjZDdiYThjYmVhMTFlIiwicm9sZSI6MX0sImlhdCI6MTY1MDI2NTUzMDEyNCwiZXhwIjoxNjUwMzUxOTMwMTI0fQ.oKE8IcL4NE6xhYIKCFuQvc9ae79xRGFWWIG90VU7hsU' \
+-d \
+'{
+    "name": "Chân gà xả tắc", 
+    "detail": "Chân gà xả tắc",
+    "price": "200000",
+    "groupProduct": "GP-1",
+    "weight": "3.5",
+    "quantity": "3.5",
+    "image": []
+}'
+
+
+
+
+
+

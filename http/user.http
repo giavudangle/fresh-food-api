@@ -1,0 +1,24 @@
+> [POST] REGISTER NEW USER
+CURL -v 'localhost:8080/user/register' \
+-X 'POST' \
+-H \
+'Content-Type: application/json; charset=utf-8' \
+-d \
+'{
+    "email": "huflit.toicao@huflit.com", 
+    "password": "huflit.toicao",
+    "phone": "0123456789",
+    "name": "Huflit Toi Cao"
+}'
+
+> [POST] LOGIN TO ACCOUNT
+
+CURL -v 'localhost:8080/user/login' \
+-X 'POST' \
+-H \
+'Content-Type: application/json; charset=utf-8' \
+-d \
+'{
+    "email": "huflit.toicao@huflit.com", 
+    "password": "huflit.toicao"
+}'

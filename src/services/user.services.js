@@ -36,7 +36,9 @@ exports.registerUserAsync = async body => {
 		await newUser.save();
 		const generateToken = jwtServices.createToken({
 			id: newUser._id,
-			role: newUser.role
+			role: newUser.role,
+			// This trick is used to create new admin account or data-fix in DB :D
+			// role: defaultRoles.Admin 
 		});
 		var result = {
 			token: generateToken,
