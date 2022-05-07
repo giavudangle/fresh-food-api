@@ -199,7 +199,7 @@ exports.createOrderAsync = async (req, res, next) => {
 				var tmnCode = 'ME42CH34';
 				var secretKey = 'XNMGSWNPSCFQPUFDPXZBERQFLZFBKBKR';
 				var vnpUrl = 'https://sandbox.vnpayment.vn/paymentv2/vpcpay.html';
-				var returnUrl = 'https://befreshfood.tk/user/successVnPay';
+				var returnUrl = 'http://localhost:8080/user/successVnPay';
 				var date = new Date();
 				var createDate =
 					date.getFullYear() +
@@ -865,7 +865,7 @@ exports.CreateOrderWithByNowAsync = async (req, res, next) => {
 				var tmnCode = 'ME42CH34';
 				var secretKey = 'XNMGSWNPSCFQPUFDPXZBERQFLZFBKBKR';
 				var vnpUrl = 'https://sandbox.vnpayment.vn/paymentv2/vpcpay.html';
-				var returnUrl = 'https://befreshfood.tk/user/successVnPay';
+				var returnUrl = 'http://localhost:8080/user/successVnPay';
 				var date = new Date();
 				var createDate =
 					date.getFullYear() +
