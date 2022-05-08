@@ -1,7 +1,6 @@
 const { defaultRoles, defaultStatusCart } = require('../config/defineModel');
 const ADDRESS = require('../models/address.model');
 
-const uploadServices = require('../services/uploadS3.service');
 const { configEnv } = require('../config');
 const axios = require('axios').default;
 

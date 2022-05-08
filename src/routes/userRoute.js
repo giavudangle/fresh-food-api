@@ -14,7 +14,6 @@ var storage = multer.memoryStorage({
 	}
 });
 
-var singleUpload = multer({ storage: storage }).single('image');
 
 router.post(
 	'/changePassword',

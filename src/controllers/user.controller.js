@@ -1,16 +1,12 @@
 const controller = require('./controller');
 const userServices = require('../services/user.services');
-const { defaultRoles } = require('../config/defineModel');
 const ORDER = require('../models/Order.model');
 const USER = require('../models/User.model');
 const otpGenerator = require('otp-generator');
 const paypal = require('paypal-rest-sdk');
 const PaypalModel = require('../models/Paypal.model');
 const { sortObject } = require('../helper');
-const { body } = require('../validators');
-var AWS = require('aws-sdk');
-const { configEnv } = require('../config');
-const uploadServices = require('../services/uploadS3.service');
+
 
 exports.registerAsync = async (req, res, next) => {
 	try {

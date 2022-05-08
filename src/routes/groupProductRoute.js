@@ -7,6 +7,7 @@ const { checkRole } = require('../middleware/checkRole.middleware');
 const { defaultRoles } = require('../config/defineModel');
 const jwtServices = require('../services/jwt.services');
 
+
 router.post(
 	'/createGroupProduct',
 	jwtServices.verify,

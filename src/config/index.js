@@ -17,6 +17,10 @@ const configEnv = {
 	Account_SID: process.env.Account_SID,
 	Auth_Token: process.env.Auth_Token,
 	Phone: process.env.Phone,
+	CLOUDINARY_NAME: process.env.CLOUDINARY_NAME,
+	CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY,
+	CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET,
+
 };
 
 const DFRoleValue = ["User", "Admin","Staff"]

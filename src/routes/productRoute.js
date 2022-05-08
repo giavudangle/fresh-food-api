@@ -6,12 +6,16 @@ const { defaultRoles } = require('../config/defineModel');
 const jwtServices = require('../services/jwt.services');
 const Validate = require('../validators');
 const SchemaValidateProduct = require('../validators/product.validator');
+const { upload } = require('../services/upload.service');
+
+
 
 router.post(
 	'/createProduct',
 	jwtServices.verify,
 	checkRole([defaultRoles.Admin]),
 	Validate.body(SchemaValidateProduct.createProduct),
+	upload.array("image"),
 	Controller.createProductAsync
 );
 
@@ -22,6 +26,12 @@ router.put(
 	checkRole([defaultRoles.Admin]),
 	Controller.updateProductAsync
 );
+
+router.post(
+	'/uploadImage',
+	upload.any(),
+	Controller.uploadImage
+)
 
 router.delete(
 	'/deleteProduct',

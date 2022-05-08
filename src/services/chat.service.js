@@ -1,7 +1,6 @@
 const CHAT = require('../models/Chat.model');
 const ROOM = require('../models/Room.model');
 const USER = require('../models/User.model');
-const uploadServices = require('../services/uploadS3.service');
 
 exports.createChat = async body => {
 	try {

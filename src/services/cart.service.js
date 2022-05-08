@@ -1,7 +1,6 @@
 const { defaultRoles, defaultStatusCart } = require('../config/defineModel');
 const CART = require('../models/Cart.model');
 const PRODUCT = require('../models/Product.model');
-const uploadServices = require('../services/uploadS3.service');
 
 exports.createCartAsync = async body => {
 	try {

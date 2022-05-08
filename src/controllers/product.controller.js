@@ -1,11 +1,8 @@
 const controller = require('./controller');
 const productServices = require('../services/product.service');
-const uploadServices = require('../services/uploadS3.service');
 const eveluateServices = require('../services/eveluate.service');
 
-const { defaultRoles } = require('../config/defineModel');
-const { configEnv } = require('../config');
-var AWS = require('aws-sdk');
+
 exports.createProductAsync = async (req, res, next) => {
 	try {
 		const resServices = await productServices.createProductAsync(
@@ -190,4 +187,8 @@ exports.findDetailProduct = async (req, res, next) => {
 		console.log(error);
 		return controller.sendError(res);
 	}
+};
+
+exports.uploadImage = async (req,res,next) => {
+	console.log(req);
 };

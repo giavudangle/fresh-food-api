@@ -1,7 +1,6 @@
 const controller = require('./controller');
 const productUserServices = require('../services/productUser.service');
 const productServices = require('../services/product.service');
-const uploadServices = require('../services/uploadS3.service');
 
 const { defaultRoles } = require('../config/defineModel');
 exports.createProductUserAsync = async (req, res, next) => {

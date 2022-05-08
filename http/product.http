@@ -9,13 +9,13 @@ CURL -v 'localhost:8080/product/createProduct' \
 -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJIVUZMSVQiLCJkYXRhIjp7ImlkIjoiNjI1ZDBkYmE4OGNjZDdiYThjYmVhMTFlIiwicm9sZSI6MX0sImlhdCI6MTY1MDI2NTUzMDEyNCwiZXhwIjoxNjUwMzUxOTMwMTI0fQ.oKE8IcL4NE6xhYIKCFuQvc9ae79xRGFWWIG90VU7hsU' \
 -d \
 '{
-    "name": "Chân gà xả tắc", 
-    "detail": "Chân gà xả tắc",
-    "price": 200000,
-    "groupProduct": "GP-1",
-    "weight": 3.5,
-    "quantity": 100,
-    "image": []
+    "name": "Bắp Cải Tím Hữu Cơ", 
+    "detail": "Bắp cải tím: tên khoa học là Brassica oleracea var capitata ruba là cây bắp cải có màu tím. Xuất xứ từ Địa Trung Hải, hiện nay được trồng rộng rãi khắp thế giới, thích hợp với khí hậu ôn đới và tại Việt Nam bắp cải tím được trồng nhiều ở Đà Lạt.",
+    "price": 55000,
+    "groupProduct": "62778a117ae6326a77cac533",
+    "weight": 2,
+    "quantity": 3000,
+    "image": ["https://product.hstatic.net/200000423303/product/bap-cai-tim-huu-co_203f203060064cf5a24b9f8e9c352214_grande.jpg"]
 }'
 
 

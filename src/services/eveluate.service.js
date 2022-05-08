@@ -3,7 +3,6 @@ const EVELUATE = require('../models/Eveluate.model');
 const USER = require('../models/User.model');
 
 const PRODUCT = require('../models/Product.model');
-const uploadServices = require('../services/uploadS3.service');
 
 exports.createEveluateAsync = async body => {
 	try {

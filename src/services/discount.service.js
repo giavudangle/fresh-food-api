@@ -3,7 +3,6 @@ const DISCOUNT = require("../models/discount.model");
 const PRODUCT = require("../models/Product.model");
 const GROUPPRODUCT = require("../models/GroupProduct.model");
 
-const uploadServices = require("../services/uploadS3.service");
 const { configEnv } = require("../config");
 
 exports.createDiscountAsync = async (body) => {

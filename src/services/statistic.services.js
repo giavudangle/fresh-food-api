@@ -1,7 +1,6 @@
 const USER = require('../models/User.model');
 const ORDER = require('../models/Order.model');
 const PRODUCT = require('../models/Product.model');
-const uploadServices = require('../services/uploadS3.service');
 const { defaultRoles, defaultModel } = require('../config/defineModel');
 
 exports.staticByOrder = async body => {

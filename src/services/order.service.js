@@ -7,7 +7,6 @@ const CART = require('../models/Cart.model');
 const ORDER = require('../models/Order.model');
 const PRODUCT = require('../models/Product.model');
 const EVELUATE = require('../models/Eveluate.model');
-const uploadServices = require('../services/uploadS3.service');
 
 exports.createOrderAsync = async body => {
 	const session = await ORDER.startSession();

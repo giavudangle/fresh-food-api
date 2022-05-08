@@ -7,7 +7,6 @@ const otpGenerator = require('otp-generator');
 const { configEnv } = require('../config/index');
 const { sendMail } = require('./sendMail.service');
 const { sendSmsTwilio } = require('./sms.service');
-const uploadServices = require('../services/uploadS3.service');
 exports.registerUserAsync = async body => {
 	try {
 		const { email, password, phone, name } = body;

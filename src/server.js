@@ -6,34 +6,28 @@ const route = require('./routes/index')
 const morgan = require("morgan")
 const cors = require("cors")
 const server = require("http").Server(app);
-var multer = require('multer');
 const socket = require('./socket');
 const paypal = require("./config/paypal");
-//connect db
-db.connect()
-//connect Paypal
-paypal.connectPayPal(process.env.ID_Client, process.env.Secret);
+const bodyParser = require('body-parser')
 
-app.use(express.urlencoded({
-    extended: true
-}))
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
-
-app.use(express.json())
-app.use(morgan("dev"))
-app.use(cors())
-app.use(route)
-app.get('/is-available', (req, res) => res.status(200).json({hello : 'Welcome to FreshFood v1.0'}))
-app.get('/*', (req, res) => res.send({message: 'cannot access route'}))
 
 global.io = require('socket.io').listen(server);
 
-socket.init();
+db.connect()
+paypal.connectPayPal(process.env.ID_Client, process.env.Secret);
 
+app.use(cors());
+app.options('*', cors());
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+app.use(express.json())
+app.use(morgan("dev"))
+app.use(route)
+
+app.get('/is-available', (req, res) => res.status(200).json({hello : 'Welcome to FreshFood v1.0'}))
+app.get('/*', (req, res) => res.send({message: 'cannot access route'}))
+
+socket.init();
 server.listen(configEnv.PORT, () => {
     console.log(`App running in port ${configEnv.PORT}`)
 })
